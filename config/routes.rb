@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/home' => 'pages#home'
+
   resources :products
   resources :users, only: [:new, :create]
   resources :reviews, only: [:show, :create, :destroy]

@@ -1,0 +1,15 @@
+<h1>Welcome to the Jungle</h1>
+
+<!-- <button><%= link_to "Sell New Product", new_product_url %></button>
+ -->
+<%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<h2>Deal of the Day: </h2>
+<br>
+<h3><%= @product.name %></h3>
+<p>$<%= @product.formatted_price %></p>
+<p>Description: <%=(@product.description).capitalize + '.' %></p>
+<br>

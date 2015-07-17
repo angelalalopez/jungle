@@ -1,5 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+product_name = Faker::Commerce.product_name
+product_description = Faker::Company.catch_phrase
+
 one:
   name: MyString
   description: MyText
@@ -9,3 +12,10 @@ two:
   name: MyString
   description: MyText
   price_in_cents: 1
+
+<% 100.times do |n| %>
+product_<%= n %>:
+  name: "#{product_name}"
+  description: "#{product_description}"
+  price_in_cents: <%= prng.rand(100...100000) %>
+<% end %>
