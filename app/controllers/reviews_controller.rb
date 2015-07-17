@@ -23,7 +23,7 @@ def create
     if @review.save
       redirect_to products_path, notice: 'Review created successfully'
     else
-      render 'products/show'
+      redirect_to @product_url
     end
   end
 
