@@ -1,0 +1,5 @@
+<p><% @products.each do |p| %></p>
+<p><%= link_to "#{p.name}",  p %></p>
+<p>$<%= p.formatted_price %> - <span><%= (p.description).capitalize + '.' %></span> </p>
+<br>
+<% end %>
