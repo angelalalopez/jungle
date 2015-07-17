@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Product.destroy_all
 
 150.times do
   Product.create(name: Faker::Commerce.product_name, description: Faker::Company.bs, price_in_cents: (Faker::Commerce.price * 100).to_i)
